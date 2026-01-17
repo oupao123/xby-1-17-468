@@ -699,12 +699,11 @@
         </div>
     </footer>
 
-    <!-- ✅ 新增 联系按钮 及 点击事件代码 -->
+    <!-- ✅ 联系按钮 + 点击触发Facebook Contact事件埋点（核心新增） -->
     <button id="contactButton">联系</button>
     <script type="text/javascript">
     document.getElementById('contactButton').addEventListener('click', function() {
-    insert_event_code_here;
-    ...
+      fbq('track', 'Contact');
     }, false);
     </script>
 
