@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acciones Españolas | Socio Colaborador | Bolsa Española y Mercado Europeo</title>
+    <meta name="description" content="¿Quieres ser nuestro socio colaborador? Invierta en acciones españolas de primera categoría, IBEX 35, dividendos y valores cotizados en la Bolsa de Madrid. Plataforma de trading profesional con tarifas bajas y ejecución instantánea.">
+    <meta name="keywords" content="acciones españolas, bolsa madrid, ibex 35, inversion en acciones, trading español, valores cotizados, socio colaborador, partnership">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        :root {
+            --primary: #0F4C81; /* Azul financiero profesional */
+            --primary-light: #1868A7;
+            --gold: #D4AF37;
+            --dark: #1A202C;
+            --gray-light: #F7FAFC;
+            --gray: #CBD5E0;
+            --success: #22C55E;
+            --danger: #EF4444;
+            --white: #FFFFFF;
+            --whatsapp: #25D366; /* 官方WhatsApp绿色 */
+            --whatsapp-dark: #12B748;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--gray-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+	padding: 0 20px;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* 主按钮改为WhatsApp绿色主题 */
+        .btn-primary {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--whatsapp-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37,211,102,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--whatsapp);
+            border: 2px solid var(--whatsapp);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15,76,129,0.9), rgba(15,76,129,0.8)), url('https://picsum.photos/id/180/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Market Ticker */
+        .market-ticker {
+            background-color: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray);
+            overflow: hidden;
+        }
+
+        .ticker-container {
+            display: flex;
+            gap: 30px;
+            animation: ticker 20s linear infinite;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .ticker-symbol {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .ticker-value {
+            font-weight: 500;
+        }
+
+        .positive { color: var(--success); }
+        .negative { color: var(--danger); }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Bolsa Data Section */
+        .bolsa-data {
+            background-color: var(--white);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .data-card {
+            background-color: var(--gray-light);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .data-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .data-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .ibex-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .stock-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        /* Ventajas Section */
+        .ventajas {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        .ventajas .section-title {
+            color: var(--white);
+        }
+
+        .ventajas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ventaja-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .ventaja-card:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .ventaja-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        /* Acciones Populares */
+        .acciones-populares {
+            background-color: var(--white);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+
+        .stocks-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .stocks-table th, .stocks-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .stocks-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .stocks-table tr:hover {
+            background-color: var(--gray-light);
+        }
+
+        /* CTA Section - 核心修改：合作伙伴文案+带话术的WhatsApp按钮 */
+        .cta {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Risk Warning */
+        .risk-warning {
+            background-color: #FFF8E1;
+            color: #856404;
+            padding: 15px;
+            margin-top: 40px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid #FFEEBA;
+        }
+
+        /* 右下角悬浮WhatsApp按钮 - 最重要的转化入口 带预设话术 */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(37,211,102,0.5);
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .cta h2 { font-size: 2rem; }
+            .section { padding: 40px 0; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom:20px; right:20px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 60px 0; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navegación - 已隐藏右上角Contactar按钮 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Bolsa<span>España</span></div>
+                <ul class="nav-links">
+                    <li><a href="#mercado">Mercado</a></li>
+                    <li><a href="#acciones">Acciones</a></li>
+                    <li><a href="#ventajas">Ventajas</a></li>
+                </ul>
+                <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - 已隐藏多余按钮，只保留1个主按钮 跳转85265621852 -->
+    <section class="hero">
+        <div class="container">
+            <h1>Invierta en Acciones Españolas con Confianza</h1>
+            <p>Plataforma profesional para invertir en el IBEX 35, acciones españolas de primer nivel y valores cotizados en la Bolsa de Madrid. Tarifas competitivas y ejecución instantánea.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactar por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticker de Mercado en Tiempo Real -->
+    <section class="market-ticker">
+        <div class="container ticker-container">
+            <div class="ticker-item">IBEX 35 <span class="ticker-value positive">9.245,32 <i class="fas fa-arrow-up"></i> +0,87%</span></div>
+            <div class="ticker-item">BBVA <span class="ticker-value positive">5,21 <i class="fas fa-arrow-up"></i> +1,16%</span></div>
+            <div class="ticker-item">Santander <span class="ticker-value positive">3,89 <i class="fas fa-arrow-up"></i> +0,78%</span></div>
+            <div class="ticker-item">Inditex <span class="ticker-value negative">32,45 <i class="fas fa-arrow-down"></i> -0,32%</span></div>
+            <div class="ticker-item">Repsol <span class="ticker-value positive">12,10 <i class="fas fa-arrow-up"></i> +1,54%</span></div>
+            <div class="ticker-item">Telefónica <span class="ticker-value negative">3,02 <i class="fas fa-arrow-down"></i> -0,66%</span></div>
+        </div>
+    </section>
+
+    <!-- Datos del Mercado Español -->
+    <section class="bolsa-data section" id="mercado">
+        <div class="container">
+            <h2 class="section-title">Mercado de Acciones Español</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <h3>IBEX 35 📊</h3>
+                    <div class="ibex-value">9.245,32</div>
+                    <div class="positive"><i class="fas fa-arrow-up"></i> +0,87% (Hoy)</div>
+                    <p>Índice bursátil principal de España, compuesto por las 35 empresas más cotizadas de la Bolsa de Madrid.</p>
+                </div>
+                <div class="data-card">
+                    <h3>Volumen de Negociación</h3>
+                    <div class="ibex-value">2.145 M€</div>
+                    <p>Volumen total de operaciones realizadas en la sesión de hoy en el mercado español.</p>
+                </div>
+                <div class="data-card">
+                    <h3>Mejores Subidas</h3>
+                    <ul class="stock-list">
+                        <li>ACS <span class="positive">+2,15%</span></li>
+                        <li>Amadeus <span class="positive">+1,98%</span></li>
+                        <li>Bankia <span class="positive">+1,72%</span></li>
+                    </ul>
+                </div>
+                <div class="data-card">
+                    <h3>Peores Bajadas</h3>
+                    <ul class="stock-list">
+                        <li>Cellnex <span class="negative">-1,24%</span></li>
+                        <li>Endesa <span class="negative">-0,95%</span></li>
+                        <li>Mapfre <span class="negative">-0,71%</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventajas de Invertir con Nosotros -->
+    <section class="ventajas section" id="ventajas">
+        <div class="container">
+            <h2 class="section-title">Por qué invertir con nosotros</h2>
+            <div class="ventajas-grid">
+                <div class="ventaja-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Tarifas Competitivas</h3>
+                    <p>Comisiones reducidas en todas las operaciones de acciones españolas y sin comisiones de mantenimiento de cuenta.</p>
+                </div>
+                <div class="ventaja-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Ejecución Instantánea</h3>
+                    <p>Operaciones ejecutadas en tiempo real en la Bolsa de Madrid, sin retrasos y con precios transparentes.</p>
+                </div>
+                <div class="ventaja-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Análisis Profesional</h3>
+                    <p>Accede a informes de mercado, análisis técnico y fundamental de las principales acciones españolas.</p>
+                </div>
+                <div class="ventaja-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Seguridad Garantizada</h3>
+                    <p>Tu capital está protegido por el Fondo de Garantía de Inversores, conforme a la normativa española y europea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acciones Populares Españolas -->
+    <section class="acciones-populares section" id="acciones">
+        <div class="container">
+            <h2 class="section-title">Acciones Españolas Populares</h2>
+            <div class="table-responsive">
+                <table class="stocks-table">
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Símbolo</th>
+                            <th>Precio (€)</th>
+                            <th>Variación (24h)</th>
+                            <th>Capitalización (M€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inditex</td>
+                            <td>ITX</td>
+                            <td>32,45</td>
+                            <td class="negative">-0,32%</td>
+                            <td>98.245</td>
+                        </tr>
+                        <tr>
+                            <td>Banco Santander</td>
+                            <td>SAN</td>
+                            <td>3,89</td>
+                            <td class="positive">+0,78%</td>
+                            <td>65.120</td>
+                        </tr>
+                        <tr>
+                            <td>BBVA</td>
+                            <td>BBVA</td>
+                            <td>5,21</td>
+                            <td class="positive">+1,16%</td>
+                            <td>42.890</td>
+                        </tr>
+                        <tr>
+                            <td>Repsol</td>
+                            <td>REP</td>
+                            <td>12,10</td>
+                            <td class="positive">+1,54%</td>
+                            <td>28.760</td>
+                        </tr>
+                        <tr>
+                            <td>Telefónica</td>
+                            <td>TEF</td>
+                            <td>3,02</td>
+                            <td class="negative">-0,66%</td>
+                            <td>22.340</td>
+                        </tr>
+                        <tr>
+                            <td>Amadeus IT Group</td>
+                            <td>AMS</td>
+                            <td>54,89</td>
+                            <td class="positive">+1,98%</td>
+                            <td>38.910</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="risk-warning">
+                <p><strong>⚠️ AVISO DE RIESGO:</strong> La inversión en acciones implica riesgos, incluyendo la posible pérdida del capital invertido. Los precios de las acciones son volátiles y pueden fluctuar por factores económicos, políticos y de mercado. Los datos mostrados son informativos y no constituyen asesoramiento financiero.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Principal - ✅核心修改 跳转+85265621852 并自动填充指定咨询话术 -->
+    <section class="cta" id="contacto">
+        <div class="container">
+            <h2>¿Quieres ser nuestro socio colaborador?</h2>
+            <p>Si estás interesado en formar parte de nuestra red de colaboradores y desarrollar juntos proyectos en el sector de la inversión bursátil, haz clic en el botón de WhatsApp a continuación y contáctanos directamente. Estaremos encantados de explicarte todas las condiciones y oportunidades de colaboración.</p>
+            <a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactarnos por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Bolsa España</h4>
+                    <p>Tu plataforma de confianza para invertir en el mercado bursátil español con seguridad y transparencia. Buscamos socios colaboradores para expandir nuestra red.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="#">Acciones Españolas</a></li>
+                        <li><a href="#">IBEX 35</a></li>
+                        <li><a href="#">ETF's</a></li>
+                        <li><a href="#">Dividendos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Colaboración</h4>
+                    <ul>
+                        <li><a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank">Ser Socio Colaborador</a></li>
+                        <li><a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank">Solicitar Información</a></li>
+                        <li><a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank">Contactar Equipo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Condiciones Generales</a></li>
+                        <li><a href="#">Aviso de Riesgos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Bolsa España. Todos los derechos reservados. Regulado por la CNMV (Comisión Nacional del Mercado de Valores).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 右下角悬浮WhatsApp按钮 - ✅跳转指定号码+自动填充话术 -->
+    <a href="https://wa.me/85265621852?text=Quiero obtener acciones de calidad.%20%C2%BFC%C3%B3mo puedo unirme al grupo de chat?" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth Scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simulación de actualización de ticker (cada 5 segundos)
+        setInterval(() => {
+            const tickerValues = document.querySelectorAll('.ticker-value');
+            tickerValues.forEach(item => {
+                const isPositive = item.classList.contains('positive');
+                const randomChange = (Math.random() * 0.2).toFixed(2);
+                const arrow = isPositive ? '<i class="fas fa-arrow-up"></i>' : '<i class="fas fa-arrow-down"></i>';
+                item.innerHTML = `${item.textContent.split(' ')[0]} ${arrow} ${isPositive ? '+' : '-'}${randomChange}%`;
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
